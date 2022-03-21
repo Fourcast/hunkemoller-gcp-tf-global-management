@@ -1,5 +1,8 @@
 # Hunkemöller Global Management
-This repository is used for creating global resources for Hunkemöllers GCP architechture. Any merges to the main branch of this repository will be picked up by [Terraform Cloud](https://app.terraform.io/session), where terraform plan will be run. The plan will then have to be approved by an administrator of Terraform Cloud.
+This repository is used for creating global resources for Hunkemöllers GCP architechture. 
+
+## Terraform Cloud
+Any merges to the main branch of this repository will be picked up by [Terraform Cloud](https://app.terraform.io/session), where terraform plan will be run. The plan will then have to be approved by an administrator of Terraform Cloud.
 
 Important note: you should ***never*** run terraform apply locally.
 
