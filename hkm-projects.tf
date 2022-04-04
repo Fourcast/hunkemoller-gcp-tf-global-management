@@ -46,7 +46,7 @@ resource "google_project" "pj-network-host-data-team" {
 # Data integration projects #
 #############################
 module "pj-workday" {
-    source = "./modules/tf-gcp-modules-resource-manager"
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
     name = "fl-workday"
     projects = {
@@ -59,7 +59,7 @@ module "pj-workday" {
 }
 
 module "pj-commerce-cloud" {
-    source = "./modules/tf-gcp-modules-resource-manager"
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
     name = "fl-commerce-cloud"
     projects = {
@@ -72,7 +72,7 @@ module "pj-commerce-cloud" {
 }
 
 module "pj-sap-bw-to-bq" {
-    source = "./modules/tf-gcp-modules-resource-manager"
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
     name = "fl-sap-bw-to-bq"
     projects = {
@@ -83,7 +83,7 @@ module "pj-sap-bw-to-bq" {
 }
 
 module "pj-selligent" {
-    source = "./modules/tf-gcp-modules-resource-manager"
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
     name = "fl-selligent"
     projects = {
@@ -246,7 +246,7 @@ resource "google_project" "pj-data-pipeline-prod" {
 # Data mart projects #
 ######################
 module "pj-data-marts" {
-    source = "./modules/tf-gcp-modules-resource-manager"
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
     name = "fl-data-marts"
     projects = {

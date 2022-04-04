@@ -2,7 +2,7 @@
 # Sandbox permissions #
 #######################
 module "set_folder_iam_jesper" {
-    source = "./modules/tf-gcp-modules-iam-folder/iam_folder_binding"
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
     folder_id = google_folder.devoteam_jesper.name
     bindings = {
@@ -11,7 +11,7 @@ module "set_folder_iam_jesper" {
 }
 
 module "set_folder_iam_phuong" {
-    source = "./modules/tf-gcp-modules-iam-folder/iam_folder_binding"
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
     folder_id = google_folder.devoteam_phuong.name
     bindings = {
@@ -20,7 +20,7 @@ module "set_folder_iam_phuong" {
 }
 
 module "set_folder_iam_bhakti_bagkar" {
-    source = "./modules/tf-gcp-modules-iam-folder/iam_folder_binding"
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
     folder_id = google_folder.hkm_bhakti_bagkar.name
     bindings = {
