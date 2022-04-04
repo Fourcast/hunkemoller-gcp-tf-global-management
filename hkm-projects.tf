@@ -45,6 +45,19 @@ resource "google_project" "pj-network-host-data-team" {
 #############################
 # Data integration projects #
 #############################
+module "pj-stocksplit" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+
+    name = "fl-stocksplit"
+    projects = {
+        "Stocksplit development" = "pj-hkm-stocksplit-dev"
+        "Stocksplit staging"     = "pj-hkm-stocksplit-staging" 
+        "Stocksplit production"  = "pj-hkm-stocksplit-prod"
+    }
+    billing_account = var.billing_account
+    parent = google_folder.data_integration.name
+}
+
 # module "pj-workday" {
 #     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 

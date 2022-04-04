@@ -1,3 +1,16 @@
+#################################
+# Data Integratiojn permissions #
+#################################
+module "set_folder_iam_stocksplit" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+    folder_id = module.pj-stocksplit.folder_id
+    bindings = {
+        "user:patrick.van.heumen@hunkemoller.com" = var.bigquery_users,
+        "user:remko.buijink@hunkemoller.com" = var.bigquery_users
+    }
+}
+
 #######################
 # Sandbox permissions #
 #######################
@@ -27,7 +40,6 @@ module "set_folder_iam_bhakti_bagkar" {
         "user:bhakti.bagkar@hunkemoller.com" = var.sandbox_roles
     }
 }
-
 
 # TODO: All these resources should be converted to using the iam_folder_binding
 resource "google_folder_iam_member" "set_folder_iam_remko_buijink" {

@@ -15,10 +15,17 @@ variable "billing_account" {
   }
 }
 
+#### DEFAULT ROLES ####
 variable sandbox_roles {
   type        = list(string)
   description = "Roles to give out to a users sandbox"
   default     = ["roles/resourcemanager.projectCreator", "roles/owner", "roles/resourcemanager.folderAdmin"]
+}
+
+variable bigquery_users {
+  type        = list(string)
+  description = "Standard roles to give out to a bigquery users in a project"
+  default     = ["roles/bigquery.dataEditor"]
 }
 
 # Top level service accounts
