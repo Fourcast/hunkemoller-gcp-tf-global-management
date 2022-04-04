@@ -65,27 +65,27 @@ module "global_management_service_accs" {
 
         # Service accounts to create via terraform
         # Data Team Management SA
-        "${var.data_team_mgmt_project_sa_name}" = {
-            servacc_name   = var.data_team_mgmt_project_sa_name
-            gcp_project_id = var.data_team_mgmt_project_id
-            description    = "Service account for data team management"
-            display_name   = "Data Team Management SA"
-        }
+    #     "${var.data_team_mgmt_project_sa_name}" = {
+    #         servacc_name   = var.data_team_mgmt_project_sa_name
+    #         gcp_project_id = var.data_team_mgmt_project_id
+    #         description    = "Service account for data team management"
+    #         display_name   = "Data Team Management SA"
+    #     }
 
-        # Network team management SA
-        "${var.network_team_mgmt_project_sa_name}" = {
-            servacc_name   = var.network_team_mgmt_project_sa_name
-            gcp_project_id = var.network_team_mgmt_project_id
-            description    = "Service account for networking management"
-            display_name   = "Network Management SA"
-        }
+    #     # Network team management SA
+    #     "${var.network_team_mgmt_project_sa_name}" = {
+    #         servacc_name   = var.network_team_mgmt_project_sa_name
+    #         gcp_project_id = var.network_team_mgmt_project_id
+    #         description    = "Service account for networking management"
+    #         display_name   = "Network Management SA"
+    #     }
 
-        # Sandbox management SA
-        "${var.sandbox_mgmt_project_sa_name}" = {
-            servacc_name   = var.sandbox_mgmt_project_sa_name
-            gcp_project_id = var.sandbox_mgmt_project_id
-            description    = "Service account for networking management"
-            display_name   = "Network Management SA"
-        }
-    }
+    #     # Sandbox management SA
+    #     "${var.sandbox_mgmt_project_sa_name}" = {
+    #         servacc_name   = var.sandbox_mgmt_project_sa_name
+    #         gcp_project_id = var.sandbox_mgmt_project_id
+    #         description    = "Service account for networking management"
+    #         display_name   = "Network Management SA"
+    #     }
+    # }
 }
