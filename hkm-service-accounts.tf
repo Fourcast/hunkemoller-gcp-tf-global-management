@@ -6,47 +6,47 @@ module "global_management_service_accs" {
     groups              = {}
     projects            = {}
     folders             = {
-        "data-team-management" = {
-            folder_id   = google_folder.data_team.name
-            groups      = null
-            sa          = {
-                "${var.data_team_mgmt_project_sa_name}" = [
-                    "roles/bigquery.admin",
-                    "roles/storage.objectAdmin",
-                ]
-            }
-        }
-        "data-team-management-cloud-composer" = {
-            folder_id   = google_folder.data_pipeline.name
-            groups      = null
-            sa          = {
-                "${var.data_team_mgmt_project_sa_name}" = [
-                    "roles/composer.admin"
-                ]
-            }
-        }
+        # "data-team-management" = {
+        #     folder_id   = google_folder.data_team.name
+        #     groups      = null
+        #     sa          = {
+        #         "${var.data_team_mgmt_project_sa_name}" = [
+        #             "roles/bigquery.admin",
+        #             "roles/storage.objectAdmin",
+        #         ]
+        #     }
+        # }
+        # "data-team-management-cloud-composer" = {
+        #     folder_id   = google_folder.data_pipeline.name
+        #     groups      = null
+        #     sa          = {
+        #         "${var.data_team_mgmt_project_sa_name}" = [
+        #             "roles/composer.admin"
+        #         ]
+        #     }
+        # }
 
-        "network-management" = {
-            folder_id = google_folder.networking.name
-            groups    = null
-            sa        = {
-                "${var.network_team_mgmt_project_sa_name}" = [
-                    "roles/compute.xpnAdmin",
-                    "roles/compute.networkAdmin",
-                    "roles/compute.securityAdmin"
-                ]
-            }
-        }
+        # "network-management" = {
+        #     folder_id = google_folder.networking.name
+        #     groups    = null
+        #     sa        = {
+        #         "${var.network_team_mgmt_project_sa_name}" = [
+        #             "roles/compute.xpnAdmin",
+        #             "roles/compute.networkAdmin",
+        #             "roles/compute.securityAdmin"
+        #         ]
+        #     }
+        # }
 
-        "sandbox-management" = {
-            folder_id = google_folder.sandboxes.name
-            groups    = null
-            sa        = {
-                "${var.sandbox_mgmt_project_sa_name}" = [
-                    "roles/resourcemanager.folderIamAdmin"
-                ]
-            }
-        }
+    #     "sandbox-management" = {
+    #         folder_id = google_folder.sandboxes.name
+    #         groups    = null
+    #         sa        = {
+    #             "${var.sandbox_mgmt_project_sa_name}" = [
+    #                 "roles/resourcemanager.folderIamAdmin"
+    #             ]
+    #         }
+    #     }
     }
 
     service_accounts = {

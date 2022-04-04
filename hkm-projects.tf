@@ -245,26 +245,26 @@ resource "google_project" "pj-data-pipeline-prod" {
 ######################
 # Data mart projects #
 ######################
-module "pj-data-marts" {
-    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+# module "pj-data-marts" {
+#     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
-    name = "fl-data-marts"
-    projects = {
-        "Data marts development" = "pj-hkm-data-marts-dev"
-        "Data marts staging"     = "pj-hkm-data-marts-staging" 
-        "Data marts production"  = "pj-hkm-data-marts-prod"
-    }
-    billing_account = var.billing_account
-    parent = google_folder.data_team.name
-}
+#     name = "fl-data-marts"
+#     projects = {
+#         "Data marts development" = "pj-hkm-data-marts-dev"
+#         "Data marts staging"     = "pj-hkm-data-marts-staging" 
+#         "Data marts production"  = "pj-hkm-data-marts-prod"
+#     }
+#     billing_account = var.billing_account
+#     parent = google_folder.data_team.name
+# }
 
 ######################
 # Sandbox projects   #
 ######################
-resource "google_project" "pj-sandbox-management" {
-    project_id = "pj-sandbox-management"
+# resource "google_project" "pj-sandbox-management" {
+#     project_id = "pj-sandbox-management"
 
-    folder_id       = google_folder.sandboxes.name
-    name            = "Sandbox Management"
-    billing_account = var.billing_account
-}
+#     folder_id       = google_folder.sandboxes.name
+#     name            = "Sandbox Management"
+#     billing_account = var.billing_account
+# }
