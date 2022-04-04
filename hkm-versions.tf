@@ -4,7 +4,7 @@ terraform {
     cloud {
         organization = "hunkemoller"
         workspaces {
-            name = "hkm-global-management"
+            name = "gcp-tf-global-management"
         }
     }
 
