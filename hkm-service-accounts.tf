@@ -87,5 +87,5 @@ module "global_management_service_accs" {
     #         description    = "Service account for networking management"
     #         display_name   = "Network Management SA"
     #     }
-    # }
+    }
 }
