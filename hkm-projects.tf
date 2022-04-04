@@ -45,42 +45,42 @@ resource "google_project" "pj-network-host-data-team" {
 #############################
 # Data integration projects #
 #############################
-module "pj-workday" {
-    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+# module "pj-workday" {
+#     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
-    name = "fl-workday"
-    projects = {
-        "Workday development" = "pj-hkm-workday-dev"
-        "Workday staging"     = "pj-hkm-workday-staging" 
-        "Workday production"  = "pj-hkm-workday-prod"
-    }
-    billing_account = var.billing_account
-    parent = google_folder.data_integration.name
-}
+#     name = "fl-workday"
+#     projects = {
+#         "Workday development" = "pj-hkm-workday-dev"
+#         "Workday staging"     = "pj-hkm-workday-staging" 
+#         "Workday production"  = "pj-hkm-workday-prod"
+#     }
+#     billing_account = var.billing_account
+#     parent = google_folder.data_integration.name
+# }
 
-module "pj-commerce-cloud" {
-    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+# module "pj-commerce-cloud" {
+#     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
-    name = "fl-commerce-cloud"
-    projects = {
-        "SFCC development" = "pj-hkm-sfcc-dev"
-        "SFCC staging"     = "pj-hkm-sfcc-staging" 
-        "SFCC production"  = "pj-hkm-sfcc-prod"
-    }
-    billing_account = var.billing_account
-    parent = google_folder.data_integration.name
-}
+#     name = "fl-commerce-cloud"
+#     projects = {
+#         "SFCC development" = "pj-hkm-sfcc-dev"
+#         "SFCC staging"     = "pj-hkm-sfcc-staging" 
+#         "SFCC production"  = "pj-hkm-sfcc-prod"
+#     }
+#     billing_account = var.billing_account
+#     parent = google_folder.data_integration.name
+# }
 
-module "pj-sap-bw-to-bq" {
-    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+# module "pj-sap-bw-to-bq" {
+#     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
-    name = "fl-sap-bw-to-bq"
-    projects = {
-        "SAP BW to BigQuery" = "pj-sap-bw-to-bq"
-    }
-    billing_account = var.billing_account
-    parent = google_folder.data_integration.name
-}
+#     name = "fl-sap-bw-to-bq"
+#     projects = {
+#         "SAP BW to BigQuery" = "pj-sap-bw-to-bq"
+#     }
+#     billing_account = var.billing_account
+#     parent = google_folder.data_integration.name
+# }
 
 module "pj-selligent" {
     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
