@@ -11,6 +11,16 @@ module "set_folder_iam_stocksplit" {
     }
 }
 
+# FIXME: Temporary solution
+module "set_project_iam_oil_dev" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
+
+    project_id = google_project.pj-oil-dev.id
+    bindings = {
+        "group:gcp-developers@hunkemoller.com" = ["roles/bigquery.dataViewer", "roles/bigquery.jobUser"],
+    }
+}
+
 #######################
 # Sandbox permissions #
 #######################
