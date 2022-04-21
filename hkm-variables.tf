@@ -28,6 +28,18 @@ variable bigquery_users {
   default     = ["roles/bigquery.dataEditor"]
 }
 
+variable bigquery_reader {
+  description = "Standard roles to give out when bigquery read access is needed"
+  type        = list(string)
+  default     = ["roles/bigquery.dataViewer", "roles/bigquery.jobUser"] 
+}
+
+variable bigquery_writer {
+  description = "Standard roles to give out when bigquery write access is needed"
+  type        = list(string)
+  default     = ["roles/bigquery.dataEditor", "roles/bigquery.jobUser"]
+}
+
 # Top level service accounts
 variable data_team_mgmt_project_id {
   description = "Project ID of Data Team management project"
