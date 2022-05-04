@@ -118,3 +118,8 @@ resource "google_folder" "hkm_teus_van_ingen" {
     display_name = "SB-Teus_van_Ingen"
     parent       = google_folder.sandboxes.name
 }
+
+resource "google_folder" "hkm_katharine_suwarso" {
+    display_name = "SB-Katharine-Suwarso"
+    parent       = google_folder.sandboxes.name
+}

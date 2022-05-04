@@ -41,6 +41,15 @@ module "set_folder_iam_bhakti_bagkar" {
     }
 }
 
+module "set_folder_iam_katharine_suwarso" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+    folder_id = google_folder.hkm_katharine_suwarso.name
+    bindings = {
+        "user:katharine.suwarso@hunkemoller.com" = var.sandbox_roles
+    }
+}
+
 # TODO: All these resources should be converted to using the iam_folder_binding
 resource "google_folder_iam_member" "set_folder_iam_remko_buijink" {
     count = length(var.sandbox_roles)
