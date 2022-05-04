@@ -88,5 +88,15 @@ module "developers_set_folder_iam_data_marts" {
     folder_id = "folders/762689581202"
     bindings = {
         "group:gcp-developers@hunkemoller.com" = var.bigquery_writer,
+        "group:gcp-data_analytics@hunkemoller.com" = var.bigquery_reader,
+    }
+}
+
+module "developers_set_project_selligent_datalake" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
+
+    project_id = "selligent-datalake"
+    bindings = {
+        "group:gcp-developers@hunkemoller.com" = var.bigquery_reader,
     }
 }
