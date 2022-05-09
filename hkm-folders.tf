@@ -123,3 +123,23 @@ resource "google_folder" "hkm_katharine_suwarso" {
     display_name = "SB-Katharine-Suwarso"
     parent       = google_folder.sandboxes.name
 }
+
+resource "google_folder" "hkm_kenita_hadi" {
+    display_name = "SB-Kenita-Hadi"
+    parent       = google_folder.sandboxes.name
+}
+
+resource "google_folder" "hkm_jonathan_tjandra" {
+    display_name = "SB-Jonathan-Tjandra"
+    parent       = google_folder.sandboxes.name
+}
+
+resource "google_folder" "hkm_bozena_kowalska" {
+    display_name = "SB-Bozena-Kowalska"
+    parent       = google_folder.sandboxes.name
+}
+
+resource "google_folder" "hkm_hanna_myhal" {
+    display_name = "SB-Hanna-Myhal"
+    parent       = google_folder.sandboxes.name
+}

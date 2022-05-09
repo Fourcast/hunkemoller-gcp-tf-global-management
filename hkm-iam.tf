@@ -50,6 +50,42 @@ module "set_folder_iam_katharine_suwarso" {
     }
 }
 
+module "set_folder_iam_hanna_myhal" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+    folder_id = google_folder.hkm_hanna_myhal.name
+    bindings = {
+        "user:Hanna.Myhal@hunkemoller.com" = var.sandbox_roles
+    }
+}
+
+module "set_folder_iam_bozena_kowalska" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+    folder_id = google_folder.hkm_bozena_kowalska.name
+    bindings = {
+        "user:Bozena.Kowalska@hunkemoller.com" = var.sandbox_roles
+    }
+}
+
+module "set_folder_iam_jonathan_tjandra" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+    folder_id = google_folder.hkm_jonathan_tjandra.name
+    bindings = {
+        "user:jonathan.tjandra@hunkemoller.com" = var.sandbox_roles
+    }
+}
+
+module "set_folder_iam_kenita_hadi" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+    folder_id = google_folder.hkm_kenita_hadi.name
+    bindings = {
+        "user:kenita.hadi@hunkemoller.com" = var.sandbox_roles
+    }
+}
+
 # TODO: All these resources should be converted to using the iam_folder_binding
 resource "google_folder_iam_member" "set_folder_iam_remko_buijink" {
     count = length(var.sandbox_roles)
