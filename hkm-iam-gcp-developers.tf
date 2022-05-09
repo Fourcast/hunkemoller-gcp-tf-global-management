@@ -1,6 +1,17 @@
 # -------------------------------- #
 # Setting bindings for developers  #
 # -------------------------------- #
+
+
+module "developers_set_folder_iam_data_integration" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+    folder_id = google_folder.data_integration.name
+    bindings = {
+        "group:gcp-developers@hunkemoller.com" = ["roles/resourcemanager.folderViewer"],
+    }
+}
+
 module "developers_set_folder_iam_oil" {
     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
