@@ -7,7 +7,8 @@ module "organization_iam_binding" {
     "serviceAccount:hkm-tfcloud-sa@pj-hkm-global-management.iam.gserviceaccount.com" = [
       "roles/compute.xpnAdmin", "roles/iam.securityAdmin", "roles/resourcemanager.projectIamAdmin",
       "roles/resourcemanager.folderAdmin",
-      "roles/resourcemanager.organizationAdmin", "roles/serviceAccountAdmin"
+      "roles/resourcemanager.organizationAdmin", "roles/serviceAccountAdmin", "roles/compute.orgSecurityPolicyAdmin",
+      "roles/compute.orgSecurityResourceAdmin"
     ]
   }
 }
