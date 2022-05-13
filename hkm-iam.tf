@@ -1,13 +1,3 @@
-module "set_folder_iam_shared_vpc" {
-  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
-
-  folder_id = google_folder.networking.name
-  bindings  = {
-    "serviceAccount:hkm-tfcloud-sa@pj-hkm-global-management.iam.gserviceaccount.com" = ["roles/compute.xpnAdmin"]
-  }
-}
-
-
 #################################
 # Data Integratiojn permissions #
 #################################
@@ -18,6 +8,16 @@ module "set_folder_iam_stocksplit" {
   bindings  = {
     "user:patrick.van.heumen@hunkemoller.com" = var.bigquery_users,
     "user:remko.buijink@hunkemoller.com"      = var.bigquery_users
+  }
+}
+
+# Networking IAM
+module "set_folder_iam_shared_vpc" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+  folder_id = google_folder.networking.name
+  bindings  = {
+    "serviceAccount:hkm-tfcloud-sa@pj-hkm-global-management.iam.gserviceaccount.com" = ["roles/compute.xpnAdmin"]
   }
 }
 
