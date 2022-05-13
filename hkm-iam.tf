@@ -4,7 +4,7 @@ module "organization_iam_binding" {
 
   organization_id = "567346409849"
   bindings        = {
-    "serviceAccount:hkm-tfcloud-sa@pj-hkm-global-management.iam.gserviceaccount.com" = ["roles/compute.xpnAdmin"]
+    "serviceAccount:hkm-tfcloud-sa@pj-hkm-global-management.iam.gserviceaccount.com" = ["roles/compute.xpnAdmin", "roles/resourcemanager.projectIamAdmin"]
   }
 }
 
