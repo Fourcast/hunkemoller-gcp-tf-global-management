@@ -1,15 +1,9 @@
-# Organization IAM
-module "organization_iam_binding" {
-  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-organization"
+module "set_folder_iam_shared_vpc" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
-  organization_id = "567346409849"
-  bindings        = {
-    "serviceAccount:hkm-tfcloud-sa@pj-hkm-global-management.iam.gserviceaccount.com" = [
-      "roles/compute.xpnAdmin", "roles/iam.securityAdmin", "roles/resourcemanager.projectIamAdmin",
-      "roles/resourcemanager.folderAdmin",
-      "roles/resourcemanager.organizationAdmin", "roles/serviceAccountAdmin", "roles/compute.orgSecurityPolicyAdmin",
-      "roles/compute.orgSecurityResourceAdmin"
-    ]
+  folder_id = google_folder.networking.name
+  bindings  = {
+    "serviceAccount:hkm-tfcloud-sa@pj-hkm-global-management.iam.gserviceaccount.com" = ["roles/compute.xpnAdmin"]
   }
 }
 
