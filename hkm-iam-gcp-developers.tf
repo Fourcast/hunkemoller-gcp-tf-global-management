@@ -54,6 +54,7 @@ module "developers_set_folder_iam_notificare" {
     folder_id = google_folder.notificare.name
     bindings = {
         "group:gcp-developers@hunkemoller.com" = var.bigquery_reader,
+        "group:gcp-vendor-cleverstrategy@hunkemoller.com" = var.bigquery_writer
     }
 }
 
