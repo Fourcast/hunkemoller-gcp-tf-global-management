@@ -98,7 +98,7 @@ module "developers_set_folder_iam_workday" {
 
     folder_id = "folders/193369994289"
     bindings = {
-        "group:	gcp-project-workday@hunkemoller.com" = var.bigquery_reader,
+        "group:gcp-project-workday@hunkemoller.com" = var.bigquery_reader,
     }
 }
 
