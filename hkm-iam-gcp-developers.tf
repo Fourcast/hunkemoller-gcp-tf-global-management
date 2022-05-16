@@ -93,6 +93,15 @@ module "developers_set_folder_iam_sap" {
     }
 }
 
+module "developers_set_folder_iam_workday" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+    folder_id = "folders/193369994289"
+    bindings = {
+        "group:	gcp-project-workday@hunkemoller.com" = var.bigquery_reader,
+    }
+}
+
 module "developers_set_folder_iam_data_marts" {
     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
@@ -109,5 +118,6 @@ module "developers_set_project_selligent_datalake" {
     project_id = "selligent-datalake"
     bindings = {
         "group:gcp-developers@hunkemoller.com" = var.bigquery_reader,
+        "serviceAccount:sds-smc-hkm-connection2@selligent-datalake.iam.gserviceaccount.com" = var.bigquery_reader
     }
 }
