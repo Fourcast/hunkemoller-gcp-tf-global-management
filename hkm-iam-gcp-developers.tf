@@ -1,8 +1,6 @@
-# -------------------------------- #
-# Setting bindings for developers  #
-# -------------------------------- #
-
-
+###################
+# FOLDER BINDINGS #
+###################
 module "developers_set_folder_iam_data_integration" {
     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
@@ -39,15 +37,6 @@ module "developers_set_folder_iam_people_counter" {
     }
 }
 
-module "developers_set_folder_iam_stocksplit" {
-    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
-
-    folder_id = module.pj-stocksplit.folder_id
-    bindings = {
-        "group:gcp-developers@hunkemoller.com" = var.bigquery_reader,
-    }
-}
-
 module "developers_set_folder_iam_notificare" {
     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
@@ -57,6 +46,16 @@ module "developers_set_folder_iam_notificare" {
         "group:gcp-vendor-cleverstrategy@hunkemoller.com" = var.bigquery_writer
     }
 }
+
+# Group requires more granular access, temporarily
+# module "developers_set_folder_iam_stocksplit" {
+#     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
+
+#     folder_id = module.pj-stocksplit.folder_id
+#     bindings = {
+#         "group:gcp-developers@hunkemoller.com" = var.bigquery_reader,
+#     }
+# }
 
 module "developers_set_folder_iam_commerce_cloud" {
     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
@@ -121,4 +120,34 @@ module "developers_set_project_selligent_datalake" {
         "group:gcp-developers@hunkemoller.com" = var.bigquery_reader,
         "serviceAccount:sds-smc-hkm-connection2@selligent-datalake.iam.gserviceaccount.com" = var.bigquery_reader
     }
+}
+
+####################
+# PROJECT BINDINGS #
+####################
+module "developers_set_pj_iam_stocksplit_dev" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_member"
+
+    project_id = "pj-hkm-stocksplit-dev"
+    role = var.bigquery_writer
+
+    member = "group:gcp-developers@hunkemoller.com"
+}
+
+module "developers_set_pj_iam_stocksplit_stage" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_member"
+
+    project_id = "pj-hkm-stocksplit-staging"
+    role = var.bigquery_reader
+
+    member = "group:gcp-developers@hunkemoller.com"
+}
+
+module "developers_set_pj_iam_stocksplit_prod" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_member"
+
+    project_id = "pj-hkm-stocksplit-prod"
+    role = var.bigquery_reader
+
+    member = "group:gcp-developers@hunkemoller.com"
 }
