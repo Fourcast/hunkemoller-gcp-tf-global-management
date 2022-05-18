@@ -2,6 +2,10 @@ resource "google_app_engine_application" "firestore_test" {
     project         = google_project.pj-oil-dev.project_id
     location_id     = "europe-west"
     database_type   = "CLOUD_FIRESTORE"
+
+    depends_on = [
+        google_project_service.enable_firestore
+    ]
 }
 
 resource "google_project_service" "enable_firestore" {
