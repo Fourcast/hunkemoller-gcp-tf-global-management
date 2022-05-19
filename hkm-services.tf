@@ -9,3 +9,9 @@ resource "google_project_service" "enable_app_engine" {
     service = "appengine.googleapis.com"
     disable_dependent_services = true
 }
+
+resource "google_project_service" "enable_app_engine_mgpr" {
+    project = google_project.pj-global-management.project_id
+    service = "appengine.googleapis.com"
+    disable_dependent_services = true
+}
