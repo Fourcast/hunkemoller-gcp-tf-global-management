@@ -1,3 +1,13 @@
+resource "google_project_service" "enable_bigquery_base_tables" {
+    project = "pj-hkm-dev-env-base-tables"
+    service = "bigquery.googleapis.com"
+    disable_dependent_services = true
+
+    depends_on = [
+        module.pj-dev-projects-base-tables
+    ]
+}
+
 resource "google_project_service" "enable_cloudbuild_globally" {
     project = google_project.pj-global-management.project_id
     service = "cloudbuild.googleapis.com"
