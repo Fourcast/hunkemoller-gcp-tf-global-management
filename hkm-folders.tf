@@ -148,3 +148,8 @@ resource "google_folder" "hkm_hanna_myhal" {
   display_name = "SB-Hanna-Myhal"
   parent       = google_folder.sandboxes.name
 }
+
+resource "google_folder" "hkm_stefan_neacsu" {
+  display_name = "SB-Stefan-Neacsu"
+  parent       = google_folder.sandboxes.name
+}
