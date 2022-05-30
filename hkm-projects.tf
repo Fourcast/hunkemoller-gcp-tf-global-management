@@ -46,14 +46,14 @@ resource "google_project" "pj-network-host-data-team" {
 # Data integration projects #
 #############################
 module "pj-dev-projects-base-tables" {
-    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
-    name = "fl-dev-projects-base-tables"
-    projects = {
-        "Dev environement base tables" = "pj-hkm-dev-env-base-tables"
-    }
-    billing_account = var.billing_account
-    parent = google_folder.data_integration.name
+  name     = "fl-dev-projects-base-tables"
+  projects = {
+    "Dev environement base tables" = "pj-hkm-dev-env-base-tables"
+  }
+  billing_account = var.billing_account
+  parent          = google_folder.data_integration.name
 }
 
 module "pj-stocksplit" {
@@ -64,6 +64,18 @@ module "pj-stocksplit" {
     "Stocksplit development" = "pj-hkm-stocksplit-dev"
     "Stocksplit staging"     = "pj-hkm-stocksplit-staging"
     "Stocksplit production"  = "pj-hkm-stocksplit-prod"
+  }
+  billing_account = var.billing_account
+  parent          = google_folder.data_integration.name
+}
+
+module "pj-zeenea" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+
+  name     = "fl-zeenea"
+  projects = {
+    "Zeenea development" = "pj-hkm-zeenea-dev"
+    "Zeenea production"  = "pj-hkm-zeenea-prod"
   }
   billing_account = var.billing_account
   parent          = google_folder.data_integration.name
