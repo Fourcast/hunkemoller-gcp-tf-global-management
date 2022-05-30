@@ -66,7 +66,7 @@ module "global_management_service_accs" {
     # Zeenea SA
     "hkm-zeenea-sa" = {
       email  = "hkm-zeenea-sa@pj-hkm-global-management.iam.gserviceaccount.com"
-      create = false
+      create = true
     }
 
     # Service accounts to create via terraform
