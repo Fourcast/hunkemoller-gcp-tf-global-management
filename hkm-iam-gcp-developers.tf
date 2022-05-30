@@ -41,9 +41,9 @@ module "developers_set_folder_iam_notificare" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
   folder_id = google_folder.notificare.name
-  bindings  = {
-    "group:gcp-developers@hunkemoller.com"            = var.bigquery_reader,
-    "group:gcp-vendor-cleverstrategy@hunkemoller.com" = var.bigquery_writer
+  bindings = {
+    "group:gcp-developers@hunkemoller.com" = var.bigquery_reader,
+    "group:gcp-vendor-cleverstrategy@hunkemoller.com" = ["roles/bigquery.dataEditor", "roles/bigquery.jobUser", "roles/bigquery.readSessionUser"]
   }
 }
 
@@ -121,6 +121,7 @@ module "developers_set_project_selligent_datalake" {
     "serviceAccount:sds-smc-hkm-connection2@selligent-datalake.iam.gserviceaccount.com" = var.bigquery_reader
   }
 }
+
 
 ####################
 # PROJECT BINDINGS #
