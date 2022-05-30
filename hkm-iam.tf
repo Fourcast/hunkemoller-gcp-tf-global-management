@@ -21,6 +21,24 @@ module "set_folder_iam_shared_vpc" {
   }
 }
 
+# Giving service accounts for CC instance dataViewer for the base tables
+# Should be enough to allow for tables to be copied
+module "set_folder_iam_base_tables" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
+
+  project_id = "pj-hkm-dev-env-base-tables"
+  bindings  = {
+    "serviceAccount:cc-sa-1032604889204@pj-data-pipeline-devel.iam.gserviceaccount.com" = ["roles/bigquery.dataViewer"],
+    "serviceAccount:cc-sa-632753434802@pj-data-pipeline-staging.iam.gserviceaccount.com" = ["roles/bigquery.dataViewer"],
+    "serviceAccount:cc-sa-841149115454@pj-data-pipeline-prod.iam.gserviceaccount.com" = ["roles/bigquery.dataViewer"]
+  }
+
+  depends_on = [
+    module.pj-dev-projects-base-tables,
+    google_project_service.enable_bigquery_base_tables
+  ]
+}
+
 #######################
 # Sandbox permissions #
 #######################
