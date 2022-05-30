@@ -158,7 +158,7 @@ module "developers_set_folder_iam_zeenea" {
 
   folder_id = "folders/780649949209"
   bindings  = {
-    "group:gcp-project-workday@hunkemoller.com"                          = var.bigquery_reader,
+    "group:gcp-developers@hunkemoller.com"                               = var.bigquery_reader,
     "serviceAccount:1056132272884-compute@developer.gserviceaccount.com" = var.bigquery_reader,
     "serviceAccount:906555615113-compute@developer.gserviceaccount.com"  = var.bigquery_reader
   }
