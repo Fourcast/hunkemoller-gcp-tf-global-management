@@ -134,6 +134,15 @@ module "developers_set_pj_iam_stocksplit_dev" {
     member = "group:gcp-developers@hunkemoller.com"
 }
 
+module "developers_set_pj_iam_stocksplit_dev_2" {
+    source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_member"
+
+    project_id = "pj-hkm-stocksplit-dev"
+    role = ["roles/bigquery.readSessionUser"]
+
+    member = "group:gcp-developers@hunkemoller.com"
+}
+
 module "developers_set_pj_iam_stocksplit_stage" {
     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_member"
 
