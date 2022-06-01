@@ -78,7 +78,7 @@ module "pj-zeenea" {
     "Zeenea production"  = "pj-hkm-zeenea-prod"
   }
   billing_account = var.billing_account
-  parent          = google_folder.data_zeenea.name
+  parent          = google_folder.data_integration.name
 }
 
 # module "pj-workday" {
