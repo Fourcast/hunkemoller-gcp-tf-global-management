@@ -81,6 +81,30 @@ module "pj-zeenea" {
   parent          = google_folder.data_integration.name
 }
 
+module "pj-zeenea" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+
+  name     = "fl-zeenea"
+  projects = {
+    "Zeenea development" = "pj-hkm-zeenea-dev"
+    "Zeenea production"  = "pj-hkm-zeenea-prod"
+  }
+  billing_account = var.billing_account
+  parent          = google_folder.data_integration.name
+}
+
+module "pj-manus" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+
+  name     = "fl-manus"
+  projects = {
+    "Manus development" = "pj-hkm-manus-dev"
+    "Manus production"  = "pj-hkm-manus-prod"
+  }
+  billing_account = var.billing_account
+  parent          = google_folder.data_integration.name
+}
+
 # module "pj-workday" {
 #     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
 
