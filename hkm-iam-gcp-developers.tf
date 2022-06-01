@@ -171,7 +171,7 @@ module "developers_set_pj_iam_zeenea_prod" {
   project_id = "pj-hkm-zeenea-prod"
   role       = var.bigquery_reader
 
-  member = "serviceAccount:1056132272884-compute@developer.gserviceaccount.com, group:gcp-developers@hunkemoller.com"
+  member = "group:gcp-developers@hunkemoller.com"
 }
 
 module "developers_set_pj_iam_zeenea_dev" {
@@ -180,7 +180,7 @@ module "developers_set_pj_iam_zeenea_dev" {
   project_id = "pj-hkm-zeenea-dev"
   role       = var.bigquery_reader
 
-  member = "serviceAccount:906555615113-compute@developer.gserviceaccount.com, group:gcp-developers@hunkemoller.com"
+  member = "group:gcp-developers@hunkemoller.com"
 }
 
 module "developers_set_pj_iam_manus_prod" {
