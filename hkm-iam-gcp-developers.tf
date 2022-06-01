@@ -192,7 +192,7 @@ module "developers_set_pj_iam_manus_prod" {
   member = "group:gcp-developers@hunkemoller.com"
 }
 
-module "developers_set_pj_iam_manus_prod" {
+module "developers_set_pj_iam_manus_dev" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_member"
 
   project_id = "pj-hkm-manus-dev"
