@@ -41,9 +41,11 @@ module "developers_set_folder_iam_notificare" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-folder/iam_folder_binding"
 
   folder_id = google_folder.notificare.name
-  bindings = {
-    "group:gcp-developers@hunkemoller.com" = var.bigquery_reader,
-    "group:gcp-vendor-cleverstrategy@hunkemoller.com" = ["roles/bigquery.dataEditor", "roles/bigquery.jobUser", "roles/bigquery.readSessionUser"]
+  bindings  = {
+    "group:gcp-developers@hunkemoller.com"            = var.bigquery_reader,
+    "group:gcp-vendor-cleverstrategy@hunkemoller.com" = [
+      "roles/bigquery.dataEditor", "roles/bigquery.jobUser", "roles/bigquery.readSessionUser"
+    ]
   }
 }
 
@@ -169,7 +171,7 @@ module "developers_set_pj_iam_zeenea_prod" {
   project_id = "pj-hkm-zeenea-prod"
   role       = var.bigquery_reader
 
-  member = "serviceAccount:1056132272884-compute@developer.gserviceaccount.com"
+  member = "serviceAccount:1056132272884-compute@developer.gserviceaccount.com, group:gcp-developers@hunkemoller.com"
 }
 
 module "developers_set_pj_iam_zeenea_dev" {
@@ -178,5 +180,23 @@ module "developers_set_pj_iam_zeenea_dev" {
   project_id = "pj-hkm-zeenea-dev"
   role       = var.bigquery_reader
 
-  member = "serviceAccount:906555615113-compute@developer.gserviceaccount.com"
+  member = "serviceAccount:906555615113-compute@developer.gserviceaccount.com, group:gcp-developers@hunkemoller.com"
+}
+
+module "developers_set_pj_iam_manus_prod" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_member"
+
+  project_id = "pj-hkm-manus-prod"
+  role       = var.bigquery_reader
+
+  member = "group:gcp-developers@hunkemoller.com"
+}
+
+module "developers_set_pj_iam_manus_prod" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_member"
+
+  project_id = "pj-hkm-manus-dev"
+  role       = var.bigquery_reader
+
+  member = "group:gcp-developers@hunkemoller.com"
 }
