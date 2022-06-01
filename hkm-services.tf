@@ -67,3 +67,23 @@ resource "google_project_service" "cloud_build_pipeline_prod" {
     service = "cloudbuild.googleapis.com"
     disable_dependent_services = true
 }
+
+resource "google_project_service" "enable_bigquery_manus_prod" {
+    project = "pj-hkm-manus-prod"
+    service = "bigquery.googleapis.com"
+    disable_dependent_services = false
+
+    depends_on = [
+        module.pj-manus
+    ]
+}
+
+resource "google_project_service" "enable_bigquery_manus_dev" {
+    project = "pj-hkm-manus-dev"
+    service = "bigquery.googleapis.com"
+    disable_dependent_services = false
+
+    depends_on = [
+        module.pj-manus
+    ]
+}
