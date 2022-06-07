@@ -170,12 +170,25 @@ resource "google_folder_iam_member" "set_folder_iam_teus_van_ingen" {
 
 resource "google_project_iam_member" "set_project_vpc_k8s_sa" {
   project = "pj-hkm-vpc-host"
-  role    = ["roles/compute.networkUser", "roles/container.hostServiceAgentUser"]
+  role    = "roles/compute.networkUser"
   member  = "service-774664708692@container-engine-robot.iam.gserviceaccount.com"
 }
 
+resource "google_project_iam_member" "set_project_vpc_k8s_sa_host_agent" {
+  project = "pj-hkm-vpc-host"
+  role    = "roles/container.hostServiceAgentUser"
+  member  = "service-774664708692@container-engine-robot.iam.gserviceaccount.com"
+}
+
+
 resource "google_project_iam_member" "set_project_vpc_k8s_cloud_services" {
   project = "pj-hkm-vpc-host"
-  role    = ["roles/compute.networkUser", "roles/editor"]
+  role    = "roles/compute.networkUser"
+  member  = "774664708692@cloudservices.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "set_project_vpc_k8s_cloud_services_editor" {
+  project = "pj-hkm-vpc-host"
+  role    = "roles/editor"
   member  = "774664708692@cloudservices.gserviceaccount.com"
 }
