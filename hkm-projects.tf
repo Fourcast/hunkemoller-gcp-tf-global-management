@@ -39,6 +39,7 @@ resource "google_project" "pj-network-host-data-team" {
   billing_account = var.billing_account
 }
 
+
 #############################
 # Data team projects        #
 #############################
@@ -92,6 +93,18 @@ module "pj-manus" {
   billing_account = var.billing_account
   parent          = google_folder.data_integration.name
 }
+
+module "pj-vpc-hunkemoller" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
+
+  name     = "fl-hunkemoller-vpc"
+  projects = {
+    "HKM VPC Host" = "pj-hkm-vpc-host"
+  }
+  billing_account = var.billing_account
+  parent          = google_folder.hunkemoller.name
+}
+
 
 # module "pj-workday" {
 #     source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-resource-manager"
@@ -287,6 +300,31 @@ resource "google_project" "pj-data-pipeline-prod" {
 
   folder_id       = google_folder.data_pipeline.name
   name            = "Data pipeline production"
+  billing_account = var.billing_account
+}
+
+# HKM Projects
+resource "google_project" "pj-hkm-prod" {
+  project_id = "pj-hkm-prod"
+
+  folder_id       = google_folder.hunkemoller.name
+  name            = "HKM production"
+  billing_account = var.billing_account
+}
+
+resource "google_project" "pj-hkm-dev" {
+  project_id = "pj-hkm-dev"
+
+  folder_id       = google_folder.hunkemoller.name
+  name            = "HKM development"
+  billing_account = var.billing_account
+}
+
+resource "google_project" "pj-hkm-qa" {
+  project_id = "pj-hkm-qa"
+
+  folder_id       = google_folder.hunkemoller.name
+  name            = "HKM QA"
   billing_account = var.billing_account
 }
 
