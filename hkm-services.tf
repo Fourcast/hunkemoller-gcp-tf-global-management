@@ -129,3 +129,9 @@ resource "google_project_service" "hkm_enable_global_management" {
   service                    = "container.googleapis.com"
   disable_dependent_services = false
 }
+
+resource "google_project_service" "hkm_enable_hkm_vpc_host" {
+  project                    = "pj-hkm-vpc-host"
+  service                    = "container.googleapis.com"
+  disable_dependent_services = false
+}
