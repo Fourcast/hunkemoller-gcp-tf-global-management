@@ -26,7 +26,7 @@ resource "google_folder" "data_team" {
   parent       = "organizations/${var.org_id}"
 }
 
-resource "google_folder" "data_team" {
+resource "google_folder" "hunkemoller" {
   display_name = "fl-hunkemoller"
   parent       = "organizations/${var.org_id}"
 }
