@@ -105,3 +105,21 @@ resource "google_project_service" "enable_compute_engine_api_hkm_qa" {
   service                    = "compute.googleapis.com"
   disable_dependent_services = false
 }
+
+resource "google_project_service" "enable_kubernetes_engine_api_hkm_dev" {
+  project                    = "pj-hkm-dev"
+  service                    = "container.googleapis.com"
+  disable_dependent_services = false
+}
+
+resource "google_project_service" "enable_kubernetes_engine_api_hkm_prod" {
+  project                    = "pj-hkm-prod"
+  service                    = "container.googleapis.com"
+  disable_dependent_services = false
+}
+
+resource "google_project_service" "enable_kubernetes_engine_api_hkm_qa" {
+  project                    = "pj-hkm-qa"
+  service                    = "container.googleapis.com"
+  disable_dependent_services = false
+}
