@@ -171,13 +171,13 @@ resource "google_folder_iam_member" "set_folder_iam_teus_van_ingen" {
 resource "google_project_iam_member" "set_project_vpc_k8s_sa" {
   project = "pj-hkm-vpc-host"
   role    = "roles/compute.networkUser"
-  member  = "service-774664708692@container-engine-robot.iam.gserviceaccount.com"
+  member  = "serviceAccount:service-774664708692@container-engine-robot.iam.gserviceaccount.com"
 }
 
 resource "google_project_iam_member" "set_project_vpc_k8s_sa_host_agent" {
   project = "pj-hkm-vpc-host"
   role    = "roles/container.hostServiceAgentUser"
-  member  = "service-774664708692@container-engine-robot.iam.gserviceaccount.com"
+  member  = "serviceAccount:service-774664708692@container-engine-robot.iam.gserviceaccount.com"
 }
 
 
