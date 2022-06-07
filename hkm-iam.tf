@@ -27,9 +27,13 @@ module "set_folder_iam_base_tables" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
 
   project_id = "pj-hkm-dev-env-base-tables"
-  bindings  = {
-    "serviceAccount:cc-sa-1032604889204@pj-data-pipeline-devel.iam.gserviceaccount.com" = ["roles/bigquery.dataViewer"],
-    "serviceAccount:cc-sa-632753434802@pj-data-pipeline-staging.iam.gserviceaccount.com" = ["roles/bigquery.dataViewer"],
+  bindings   = {
+    "serviceAccount:cc-sa-1032604889204@pj-data-pipeline-devel.iam.gserviceaccount.com" = [
+      "roles/bigquery.dataViewer"
+    ],
+    "serviceAccount:cc-sa-632753434802@pj-data-pipeline-staging.iam.gserviceaccount.com" = [
+      "roles/bigquery.dataViewer"
+    ],
     "serviceAccount:cc-sa-841149115454@pj-data-pipeline-prod.iam.gserviceaccount.com" = ["roles/bigquery.dataViewer"]
   }
 
@@ -162,4 +166,16 @@ resource "google_folder_iam_member" "set_folder_iam_teus_van_ingen" {
   folder = google_folder.hkm_teus_van_ingen.name
   role   = var.sandbox_roles[count.index]
   member = "user:teus.van.ingen@hunkemoller.com"
+}
+
+resource "google_project_iam_member" "set_project_vpc_k8s" {
+  project = "pj-hkm-vpc-host"
+  role    = ["roles/compute.networkUser", "roles/container.hostServiceAgentUser"]
+  member  = "service-774664708692@container-engine-robot.iam.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "set_project_vpc_k8s" {
+  project = "pj-hkm-vpc-host"
+  role    = ["roles/compute.networkUser", "roles/editor"]
+  member  = "774664708692@cloudservices.gserviceaccount.com"
 }
