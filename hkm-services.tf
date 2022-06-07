@@ -123,3 +123,9 @@ resource "google_project_service" "enable_kubernetes_engine_api_hkm_qa" {
   service                    = "container.googleapis.com"
   disable_dependent_services = false
 }
+
+resource "google_project_service" "hkm_enable_global_management" {
+  project                    = "pj-hkm-global-management"
+  service                    = "container.googleapis.com"
+  disable_dependent_services = false
+}
