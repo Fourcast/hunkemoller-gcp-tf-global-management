@@ -324,7 +324,7 @@ resource "google_project" "pj-hkm-qa" {
   project_id = "pj-hkm-qa"
 
   folder_id       = google_folder.hunkemoller.name
-  name            = "HKM QA"
+  name            = "HKM qa"
   billing_account = var.billing_account
 }
 
