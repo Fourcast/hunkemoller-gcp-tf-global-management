@@ -63,6 +63,11 @@ module "global_management_service_accs" {
       create = false
     }
 
+    "hkm-digital-receipts-sa" = {
+      email  = "hkm-digital-receipts-sa-signed@pj-hkm-dev.iam.gserviceaccount.com"
+      create = false
+    }
+
     # Service accounts to create via terraform
     # Data Team Management SA
     #     "${var.data_team_mgmt_project_sa_name}" = {
