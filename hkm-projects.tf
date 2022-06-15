@@ -336,6 +336,14 @@ resource "google_project" "pj-hkm-captcha" {
   billing_account = var.billing_account
 }
 
+resource "google_project" "pj-hkm-billing" {
+  project_id = "pj-hkm-biklling"
+
+  folder_id       = google_folder.fl_billing_data_integration
+  name            = "HKM Billing"
+  billing_account = var.billing_account
+}
+
 ######################
 # Data mart projects #
 ######################
