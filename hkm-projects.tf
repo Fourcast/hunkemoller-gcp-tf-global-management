@@ -328,6 +328,14 @@ resource "google_project" "pj-hkm-qa" {
   billing_account = var.billing_account
 }
 
+resource "google_project" "pj-hkm-captcha" {
+  project_id = "pj-hkm-captcha"
+
+  folder_id       = google_folder.hunkemoller.name
+  name            = "HKM Captcha"
+  billing_account = var.billing_account
+}
+
 ######################
 # Data mart projects #
 ######################

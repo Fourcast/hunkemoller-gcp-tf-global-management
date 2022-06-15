@@ -168,6 +168,7 @@ resource "google_folder_iam_member" "set_folder_iam_teus_van_ingen" {
   member = "user:teus.van.ingen@hunkemoller.com"
 }
 
+## GKE IAMs needed in order to work with private setup
 resource "google_project_iam_member" "set_project_vpc_k8s_sa" {
   project = "pj-hkm-vpc-host"
   role    = "roles/compute.networkUser"
