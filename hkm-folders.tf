@@ -52,6 +52,11 @@ resource "google_folder" "data_integration" {
   parent       = google_folder.data_team.name
 }
 
+resource "google_folder" "fl_billing_data_integration" {
+  display_name = "fl-gcp-billing"
+  parent       = google_folder.data_integration.name
+}
+
 resource "google_folder" "data_zeenea" {
   display_name = "fl-zeenea-integration"
   parent       = google_folder.data_team.name
