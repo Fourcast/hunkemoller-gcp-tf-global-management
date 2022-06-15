@@ -194,12 +194,6 @@ resource "google_project_iam_member" "set_project_vpc_k8s_cloud_services_editor"
   member  = "serviceAccount:774664708692@cloudservices.gserviceaccount.com"
 }
 
-resource "google_project_iam_member" "digital_receipts_sa_signed_url" {
-  project = "pj-hkm-dev"
-  role    = "roles/storageAdmin"
-  member  = "serviceAccount:hkm-digital-receipts-sa-signed@pj-hkm-dev.iam.gserviceaccount.com"
-}
-
 resource "google_project_iam_member" "digital_receipts_sa_signed_url_storage_admin" {
   project = "pj-hkm-dev"
   role    = "roles/storage.admin"
