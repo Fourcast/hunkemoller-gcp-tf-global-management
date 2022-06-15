@@ -135,3 +135,9 @@ resource "google_project_service" "hkm_enable_hkm_vpc_host" {
   service                    = "container.googleapis.com"
   disable_dependent_services = false
 }
+
+resource "google_project_service" "hkm_enable_hkm_bigquery" {
+  project                    = "pj-hkm-billing"
+  service                    = "container.googleapis.com"
+  disable_dependent_services = false
+}
