@@ -339,7 +339,7 @@ resource "google_project" "pj-hkm-captcha" {
 resource "google_project" "pj-hkm-billing" {
   project_id = "pj-hkm-biklling"
 
-  folder_id       = google_folder.fl_billing_data_integration
+  folder_id       = google_folder.fl_billing_data_integration.name
   name            = "HKM Billing"
   billing_account = var.billing_account
 }
