@@ -212,7 +212,7 @@ module "bastion_host_sa_iam" {
 
   project_id = "pj-hkm-dev"
   bindings  = {
-    "serviceAccount:" = ["roles/compute.osLogin", "roles/iam.serviceAccountUser", "roles/compute.instanceAdmin.v1",
+    "serviceAccount:bastion-group@pj-hkm-dev.iam.gserviceaccount.com" = ["roles/compute.osLogin", "roles/iam.serviceAccountUser", "roles/compute.instanceAdmin.v1",
         "roles/iap.tunnelResourceAccessor", "projects/pj-housinganywhere-dev/roles/osLoginProjectGet_987c",
         "roles/container.clusterViewer", "roles/storage.objectAdmin"]
   }
