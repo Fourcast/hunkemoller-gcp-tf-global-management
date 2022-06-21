@@ -253,7 +253,7 @@ module "digital_receipts_nicky_van_steensel_dev" {
   }
 }
 
-module "digital_receipts_nicky_van_steensel_dev" {
+module "digital_receipts_nicky_van_steensel_prod" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
 
   project_id = "pj-hkm-prod"
