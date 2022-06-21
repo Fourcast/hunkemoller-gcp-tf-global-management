@@ -247,7 +247,7 @@ module "digital_receipts_nicky_van_steensel_dev" {
 
   project_id = "pj-hkm-dev"
   bindings   = {
-    "user:nicky.van.steensel@hunkemoller.com " = [
+    "user:nicky.van.steensel@hunkemoller.com" = [
       "roles/storage.admin", "roles/iam.serviceAccountTokenCreator", "roles/viewer"
     ]
   }
@@ -258,7 +258,7 @@ module "digital_receipts_nicky_van_steensel_prod" {
 
   project_id = "pj-hkm-prod"
   bindings   = {
-    "user:nicky.van.steensel@hunkemoller.com " = [
+    "user:nicky.van.steensel@hunkemoller.com" = [
       "roles/viewer"
     ]
   }
@@ -269,7 +269,7 @@ module "digital_receipts_nicky_van_steensel_qa" {
 
   project_id = "pj-hkm-dev"
   bindings   = {
-    "user:nicky.van.steensel@hunkemoller.com " = [
+    "user:nicky.van.steensel@hunkemoller.com" = [
       "roles/storage.admin", "roles/iam.serviceAccountTokenCreator", "roles/viewer"
     ]
   }
