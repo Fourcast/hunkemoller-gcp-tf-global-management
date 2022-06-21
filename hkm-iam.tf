@@ -201,7 +201,7 @@ resource "google_project_iam_member" "digital_receipts_sa_signed_url_storage_adm
 }
 
 resource "google_project_iam_member" "digital_receipts_sa_signed_url_sa_token_creator" {
-  project = "pj-hkm-qa"
+  project = "pj-hkm-dev"
   role    = "roles/iam.serviceAccountTokenCreator"
   member  = "serviceAccount:hkm-digital-receipts-sa-signed@pj-hkm-dev.iam.gserviceaccount.com"
 }
