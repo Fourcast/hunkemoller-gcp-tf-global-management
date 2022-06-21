@@ -275,7 +275,6 @@ module "digital_receipts_nicky_van_steensel_qa" {
   }
 }
 
-
 # Bastion host SA
 module "bastion_host_sa_iam" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
