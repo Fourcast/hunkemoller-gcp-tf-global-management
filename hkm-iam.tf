@@ -210,7 +210,7 @@ resource "google_project_iam_member" "digital_receipts_sa_signed_url_sa_token_cr
 module "bastion_host_sa_iam" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
 
-  project = "pj-hkm-dev"
+  project_id = "pj-hkm-dev"
   bindings  = {
     "serviceAccount:" = ["roles/compute.osLogin", "roles/iam.serviceAccountUser", "roles/compute.instanceAdmin.v1",
         "roles/iap.tunnelResourceAccessor", "projects/pj-housinganywhere-dev/roles/osLoginProjectGet_987c",
