@@ -211,9 +211,11 @@ module "bastion_host_sa_iam" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
 
   project_id = "pj-hkm-dev"
-  bindings  = {
-    "serviceAccount:bastion-group@pj-hkm-dev.iam.gserviceaccount.com" = ["roles/compute.osLogin", "roles/iam.serviceAccountUser", "roles/compute.instanceAdmin.v1",
-        "roles/iap.tunnelResourceAccessor", "projects/pj-housinganywhere-dev/roles/osLoginProjectGet_987c",
-        "roles/container.clusterViewer", "roles/storage.objectAdmin"]
+  bindings   = {
+    "serviceAccount:bastion-group@pj-hkm-dev.iam.gserviceaccount.com" = [
+      "roles/compute.osLogin", "roles/iam.serviceAccountUser", "roles/compute.instanceAdmin.v1",
+      "roles/iap.tunnelResourceAccessor",
+      "roles/container.clusterViewer", "roles/storage.objectAdmin"
+    ]
   }
 }
