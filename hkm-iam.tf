@@ -201,9 +201,45 @@ resource "google_project_iam_member" "digital_receipts_sa_signed_url_storage_adm
 }
 
 resource "google_project_iam_member" "digital_receipts_sa_signed_url_sa_token_creator" {
-  project = "pj-hkm-dev"
+  project = "pj-hkm-qa"
   role    = "roles/iam.serviceAccountTokenCreator"
   member  = "serviceAccount:hkm-digital-receipts-sa-signed@pj-hkm-dev.iam.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "digital_receipts_sa_signed_url_sa_prod" {
+  project = "pj-hkm-prod"
+  role    = "roles/iam.serviceAccountTokenCreator"
+  member  = "serviceAccount:hkm-sa-digital-receipts-prod@pj-hkm-prod.iam.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "digital_receipts_sa_signed_url_sa_dev" {
+  project = "pj-hkm-dev"
+  role    = "roles/iam.serviceAccountTokenCreator"
+  member  = "serviceAccount:hkm-digital-receipts-dev@pj-hkm-dev.iam.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "digital_receipts_sa_signed_url_sa_qa" {
+  project = "pj-hkm-qa"
+  role    = "roles/iam.serviceAccountTokenCreator"
+  member  = "serviceAccount:hkm-sa-digital-receipts-qa@pj-hkm-qa.iam.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "digital_receipts_sa_signed_url_storage_admin_dev" {
+  project = "pj-hkm-dev"
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:hkm-digital-receipts-dev@pj-hkm-dev.iam.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "digital_receipts_sa_signed_url_storage_admin_prod" {
+  project = "pj-hkm-prod"
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:hkm-sa-digital-receipts-prod@pj-hkm-prod.iam.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "digital_receipts_sa_signed_url_storage_admin_qa" {
+  project = "pj-hkm-qa"
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:hkm-sa-digital-receipts-qa@pj-hkm-qa.iam.gserviceaccount.com"
 }
 
 # Bastion host SA
