@@ -242,6 +242,40 @@ resource "google_project_iam_member" "digital_receipts_sa_signed_url_storage_adm
   member  = "serviceAccount:hkm-sa-digital-receipts-qa@pj-hkm-qa.iam.gserviceaccount.com"
 }
 
+module "digital_receipts_nicky_van_steensel_dev" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
+
+  project_id = "pj-hkm-dev"
+  bindings   = {
+    "user:nicky.van.steensel@hunkemoller.com " = [
+      "roles/storage.admin", "roles/iam.serviceAccountTokenCreator", "roles/viewer"
+    ]
+  }
+}
+
+module "digital_receipts_nicky_van_steensel_dev" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
+
+  project_id = "pj-hkm-prod"
+  bindings   = {
+    "user:nicky.van.steensel@hunkemoller.com " = [
+      "roles/viewer"
+    ]
+  }
+}
+
+module "digital_receipts_nicky_van_steensel_qa" {
+  source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
+
+  project_id = "pj-hkm-dev"
+  bindings   = {
+    "user:nicky.van.steensel@hunkemoller.com " = [
+      "roles/storage.admin", "roles/iam.serviceAccountTokenCreator", "roles/viewer"
+    ]
+  }
+}
+
+
 # Bastion host SA
 module "bastion_host_sa_iam" {
   source = "git@github.com:hunkemollerbv/gcp-tf-modules.git//tf-gcp-modules-iam-project/iam_project_binding"
@@ -255,3 +289,4 @@ module "bastion_host_sa_iam" {
     ]
   }
 }
+
