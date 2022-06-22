@@ -83,6 +83,26 @@ module "global_management_service_accs" {
       create = false
     }
 
+    "hkm-zeenea-sa-dev" = {
+      email  = "zeenea-vm-sa@pj-hkm-zeenea-dev.iam.gserviceaccount.com"
+      create = false
+    }
+
+    "hkm-zeenea-sa-prod" = {
+      email  = "zeenea-vm-sa@pj-hkm-zeenea-prod.iam.gserviceaccount.com"
+      create = false
+    }
+
+    "hkm-zeenea-connector-dev" = {
+      email  = "zeenea-connector@pj-hkm-zeenea-dev.iam.gserviceaccount.com"
+      create = false
+    }
+
+    "hkm-zeenea-connector-prod" = {
+      email  = "zeenea-connector@pj-hkm-zeenea-prod.iam.gserviceaccount.com"
+      create = false
+    }
+
     # Service accounts to create via terraform
     # Data Team Management SA
     #     "${var.data_team_mgmt_project_sa_name}" = {
